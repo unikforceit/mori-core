@@ -1,0 +1,70 @@
+.mori-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.mori-slider .swiper-container {
+  width: 100%;
+  height: 500px;
+}
+
+.mori-slider .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.mori-slider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mori-slider .slider-content {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: inherit;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.mori-slider .slider-content h2 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.mori-slider .slider-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff7b00;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.mori-slider .swiper-pagination {
+  bottom: 10px;
+}
+
+.mori-slider .swiper-button-next,
+.mori-slider .swiper-button-prev {
+  color: white;
+}
+
+/* Style Variants */
+.mori-slider.overlay-dark .slider-content {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.mori-slider.overlay-light .slider-content {
+  background: rgba(255, 255, 255, 0.7);
+  color: black;
+}
