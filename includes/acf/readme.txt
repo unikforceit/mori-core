@@ -1,0 +1,48 @@
+=== Enhanced Field Builder Premium ===
+Contributors: Festinger Vault, WP Engine
+Tags: custom fields, plugin, customization, Festinger Vault, GPL
+Requires at least: 6.0
+Tested up to: 6.0 
+Stable tag: 6.3.12
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/
+
+Unlock ultimate site customization with Enhanced Field Builder Premium! Create flexible, dynamic sites effortlessly. Tailor content exactly to your needs.
+
+== Description ==
+Ever feel like your client's content management system is stuck in the Stone Age? Are you tired of wrestling with inflexible themes and plugins that just don't quite do what you need? Well, buckle up, buttercup, because we're about to drag your content management workflow kicking and screaming into the 21st century with Enhanced Field Builder Premium. Forget the days of rigid templates and limited customization. This plugin is your golden ticket to creating dynamic, user-friendly, and downright sexy websites. 
+Enhanced Field Builder Premium hands you the reins, letting you craft bespoke content structures tailored to your client's exact needs. Imagine the possibilities: complex product catalogs, intricate real estate listings, or even a recipe database that's actually, you know, usable. And the best part? You don't need a PhD in rocket surgery to make it all happen. The intuitive interface means you'll be slinging custom fields like a coding ninja in no time. 
+So, ditch the frustration and embrace the power. Enhanced Field Builder Premium isn't just a plugin; it's a content revolution waiting to happen. Get ready to unlock a world of possibilities and build websites that not only look amazing but also function flawlessly. Let's dive in and see what this bad boy can do!
+Unleash the Power of Custom Fields: Beyond Basic Content
+Custom fields are the backbone of truly adaptable content management. They let you move beyond standard title and body text. Instead, you create structured data tailored to your website's specific needs. Enhanced Field Builder Premium significantly expands these capabilities. It offers features like flexible content layouts, repeaters, and media galleries. These tools empower you to build dynamic, data-driven websites. 
+Consider a real estate website. Instead of embedding property details within generic text, use custom fields for bedrooms, bathrooms, square footage, and price. A repeater field can manage image galleries for each listing. Flexible content layouts let you design unique sections for each property, like a virtual tour or neighborhood description. Think of a recipe site. Use custom fields for ingredients, cook time, and difficulty. Repeaters can handle multiple steps in the instructions. A media gallery showcases the finished dish. 
+The ability to define your own fields and structures transformed the site building landscape. It gave developers and content creators powerful tools for crafting unique user experiences. One popular plugin led the way in the realm of custom field implementation for a prevalent content management system. Certain platform providers recognized the value and even acquired it to further expand its reach and capabilities.
+Crafting Dynamic Layouts: Flexible Content Fields Explained
+Flexible Content fields are powerful tools. They let you build dynamic page layouts. Think of them as containers that hold various content blocks. Each block can be anything: text, images, videos, or custom elements. To create a Flexible Content field, add a custom field group and select "Flexible Content" as the field type. Define your layouts, each representing a different content block. For each layout, add sub-fields to hold the content. Using a Flexible Content field is straightforward. When editing, you'll see an "Add Layout" button. Clicking this lets you choose from your layouts, which then display their sub-fields, ready for content. Organize layouts thoughtfully by grouping similar blocks and using clear, descriptive names. This makes it easier to find the right block when building pages. Consider using conditional logic within layouts to show or hide certain sub-fields based on user input. This adds even more control. Clean, well-organized layouts lead to manageable and scalable sites.
+Mastering Repeater Fields: Creating Scalable Content Solutions
+Repeater fields are essential for creating scalable and manageable content structures. They let you define a set of sub-fields, which can then be repeated as many times as needed. Think of them as building blocks you can stack and rearrange. 
+For example, create an image gallery by repeating image and caption fields. A product listing can be built with repeated fields for product name, description, price, and image. Team member profiles become simple with repeated fields for name, title, bio, and photo. Each instance within the repeater functions as a self-contained unit.
+Advanced techniques include nested repeaters, which add further complexity. Imagine a product listing where each product has a repeater for different sizes or colors, each with its own associated image and price. Using conditional logic within repeater fields can display or hide sub-fields based on user input, offering highly customizable content creation experiences. With repeaters, the possibilities for dynamic content are vast.
+Advanced Features: Galleries, Options Pages, and More!
+Beyond basic fields and repeatable content blocks, Enhanced Field Builder Premium unlocks features for truly tailored experiences. Let's explore some of these advanced capabilities.
+Gallery fields streamline image management. Instead of individually uploading and linking images, create intuitive galleries directly within your content. Display them using custom layouts to perfectly complement your website's design. Consider using gallery fields to showcase portfolios, product highlights, or event photos.
+Options pages provide a centralized location for managing site-wide settings. These settings are distinct from individual post or page content. Use options pages to control elements like header/footer styles, social media links, or contact information. This simplifies site maintenance and ensures design consistency.
+Furthermore, leverage conditional logic across all fields. Show or hide fields based on selections made in other fields. This helps create dynamic forms and streamlined editing experiences. Advanced validation rules ensure data accuracy, maintaining the integrity of your website. These combined features give you precise control over every aspect of your website's content and design.
+Developer's Delight: Integrating Enhanced Field Builder Premium with Your Themes
+For developers, Enhanced Field Builder Premium offers seamless theme integration. It allows dynamic content display using simple code snippets. Retrieve field values with functions like get_field('field_name'). Output them directly in your templates: &lt;p&gt;&lt;?php echo get_field('my_text_field'); ?&gt;&lt;/p&gt;. 
+Leverage the flexibility through filters and actions. Modify field display using filters: apply_filters('efb_the_value', $value, $field, $post_id). Create custom actions to trigger specific functions upon field updates. A best practice is to encapsulate field retrieval within template parts. This promotes code reusability and maintainability. Remember to escape your data before outputting to prevent security vulnerabilities: esc_html(get_field('my_text_field')) or esc_attr(get_field('my_url_field')). Use conditional logic to display content based on field values. This is done with if( get_field('boolean_field') ). Utilize theme functions.php or create custom plugins to organize your code. This avoids cluttering your theme's template files. Properly commented code ensures clarity and simplifies future modifications.
+Final words
+Enhanced Field Builder Premium isn't just a plugin; it's a paradigm shift in how you approach site development. By providing you with the tools to create custom content structures and dynamic layouts, it empowers you to build websites that are both functional and beautiful. From flexible content fields to repeater fields and advanced options pages, Enhanced Field Builder Premium offers a comprehensive suite of features to meet the needs of even the most demanding clients. 
+Remember those days of wrestling with rigid themes and plugins? Kiss them goodbye. With Enhanced Field Builder Premium, you're in control. You can tailor content exactly to your client's needs, create unique user experiences, and build sites that truly stand out from the crowd. And the best part? It's all done with an intuitive interface that doesn't require a degree in computer science.
+So, what are you waiting for? It's time to ditch the limitations and embrace the power of Enhanced Field Builder Premium. Unlock a world of possibilities and build websites that not only look amazing but also function flawlessly. Your clients will thank you, and your sanity will thank you even more.
+
+== Installation ==
+1. Download the Custom Fields Enhancer plugin from Festinger Vault.<br><br>2. Upload the plugin file to your website through the admin panel, under 'Plugins' > 'Add New'.<br><br>3. Activate the plugin to start customizing your fields with ease.
+
+== Changelog ==
+Version 6.3.11
+- Integration with advanced field types, including repeaters and galleries refactored
+- Compatibility updates for modern PHP versions
+- Readme.txt updated with forked plugin information
+- Plugin header updated to reflect the new naming
+- Enhanced UI features for better field management

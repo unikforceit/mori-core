@@ -41,6 +41,8 @@ function mori_framework_init_check() {
         require_once MORI_PLUGIN_DIR .'includes/options/customizer.php';
     }
     require_once MORI_PLUGIN_DIR .'includes/block-init.php';
+    require_once MORI_PLUGIN_DIR .'includes/acf/acf.php';
+    require_once MORI_PLUGIN_DIR .'vendor/admin.php';
 }
 
 add_action( 'plugins_loaded', 'mori_framework_init_check' );

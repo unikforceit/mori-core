@@ -1,107 +1,174 @@
-<?php
-if (!defined('ABSPATH')) {
+<?php if (!defined('ABSPATH')) {
     die;
-} // Cannot access directly.
+}
 
-//
-// Set a unique slug-like ID
-//
-$prefix = 'mori_customizer_options';
+$prefix = '_mori';
 
-//
-// Create customize options
-//
 CSF::createCustomizeOptions($prefix);
 
-
-//
-// Create a section
-//
-CSF::createSection( $prefix, array(
-    'title'    => 'Mori - Options',
+CSF::createSection($prefix, array(
+    'id' => 'fields',
+    'title' => 'Mori',
     'priority' => 1,
-    'fields'   => array(
+));
 
-        //
-        // A text field
-        //
+//
+CSF::createSection($prefix, array(
+    'parent' => 'fields',
+    'title' => 'General',
+    'fields' => array(
+
         array(
-            'id'    => 'opt-overview-text',
-            'type'  => 'text',
-            'title' => 'Text',
+            'id' => 'bgcolor',
+            'type' => 'background',
+            'title' => 'Background color',
+            'output' => 'body, body:not(.page-template-elementor_canvas)',
+            'output_mode' => 'background-color',
         ),
 
         array(
-            'id'    => 'opt-overview-textarea',
-            'type'  => 'textarea',
-            'title' => 'Textarea',
-            'help'  => 'The help text of the field.',
+            'id' => 'enb_share_tag',
+            'type' => 'switcher',
+            'title' => 'Post tag & share',
         ),
 
         array(
-            'id'    => 'opt-upload',
-            'type'  => 'upload',
-            'title' => 'Upload',
+            'id' => 'enb_single_nav',
+            'type' => 'switcher',
+            'title' => 'Single post navigation',
         ),
 
         array(
-            'id'    => 'opt-overview-switcher',
-            'type'  => 'switcher',
-            'title' => 'Switcher',
-            'label' => 'The label text of the switcher.',
+            'id' => 'enb_pagination',
+            'type' => 'switcher',
+            'title' => 'Post pagination',
         ),
 
         array(
-            'id'      => 'opt-overview-color',
-            'type'    => 'color',
-            'title'   => 'Color',
-            'default' => '#3498db',
+            'id' => 'enb_rpost',
+            'type' => 'switcher',
+            'title' => 'Related post',
         ),
 
         array(
-            'id'    => 'opt-overview-checkbox',
-            'type'  => 'checkbox',
-            'title' => 'Checkbox',
-            'label' => 'The label text of the checkbox.',
+            'id' => 'enb_authbox',
+            'type' => 'switcher',
+            'title' => 'Author box',
         ),
 
         array(
-            'id'      => 'opt-overview-radio',
-            'type'    => 'radio',
-            'title'   => 'Radio',
-            'options' => array(
-                'yes'   => 'Yes, Please.',
-                'no'    => 'No, Thank you.',
-            ),
-            'default' => 'yes',
+            'id' => 'tag_title',
+            'type' => 'text',
+            'title' => 'Tag title',
+            'default' => 'Related tag',
+            'dependency' => array('enb_share_tag', '==', 'true'),
         ),
 
         array(
-            'id'          => 'opt-overview-select',
-            'type'        => 'select',
-            'title'       => 'Select',
-            'placeholder' => 'Select an option',
-            'options'     => array(
-                'opt-1'     => 'Option 1',
-                'opt-2'     => 'Option 2',
-                'opt-3'     => 'Option 3',
-            ),
+            'id' => 'share_title',
+            'type' => 'text',
+            'title' => 'Share title',
+            'default' => 'Social share',
+            'dependency' => array('enb_share_tag', '==', 'true'),
+        ),
+
+        array(
+            'id' => 'related_title',
+            'type' => 'text',
+            'title' => 'Related post title',
+            'default' => 'Related post',
+            'dependency' => array('enb_rpost', '==', 'true'),
+        ),
+
+        array(
+            'id' => 'auth_title',
+            'type' => 'text',
+            'title' => 'Author box title',
+            'default' => 'Written by',
+            'dependency' => array('enb_authbox', '==', 'true'),
         ),
 
     )
-) );
+));
 
+CSF::createSection($prefix, array(
+    'parent' => 'fields',
+    'title' => 'Typography',
+    'fields' => array(
+        array(
+            'id' => 'arch_body_fonts',
+            'type' => 'typography',
+            'title' => 'Body Typography',
+            'output' => 'body',
+
+        ),
+        array(
+            'id' => 'arch_h1_fonts',
+            'type' => 'typography',
+            'title' => 'H1 Typography',
+            'output' => 'h1',
+        ),
+        array(
+            'id' => 'arch_h2_fonts',
+            'type' => 'typography',
+            'title' => 'H2 Typography',
+            'output' => 'h2',
+        ),
+        array(
+            'id' => 'arch_h3_fonts',
+            'type' => 'typography',
+            'title' => 'H3 Typography',
+            'output' => 'h3',
+        ),
+        array(
+            'id' => 'arch_h4_fonts',
+            'type' => 'typography',
+            'title' => 'H4 Typography',
+            'output' => 'h4',
+        ),
+        array(
+            'id' => 'arch_h5_fonts',
+            'type' => 'typography',
+            'title' => 'H5 Typography',
+            'output' => 'h5',
+        ),
+        array(
+            'id' => 'arch_h6_fonts',
+            'type' => 'typography',
+            'title' => 'H6 Typography',
+            'output' => 'h6',
+        ),
+    )
+));
 //
-// Create a section
-//
-CSF::createSection( $prefix, array(
-    'title'    => 'Mori - Reset & Backup',
-    'priority' => 3,
-    'fields'   => array(
+CSF::createSection($prefix, array(
+    'parent' => 'fields',
+    'title' => 'Template Settings',
+    'fields' => array(
 
         array(
-            'type'  => 'backup',
+            'id' => 'enb_pre',
+            'type' => 'switcher',
+            'title' => 'Preloader',
+        ),
+        array(
+            'id' => 'enb_scroll',
+            'type' => 'switcher',
+            'title' => 'Scroll Top',
+        ),
+        array(
+            'id' => 'prebg',
+            'type' => 'background',
+            'title' => 'Overlay background',
+            'output' => array('#preloader'),
+            'output_important' => true,
+            'dependency' => array('enb_pre', '==', 'true'),
         ),
 
-    ),
-) );
+        array(
+            'type' => 'backup',
+        ),
+
+    )
+));
+
