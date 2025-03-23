@@ -22,70 +22,8 @@ CSF::createSection($prefix, array(
             'id' => 'bgcolor',
             'type' => 'background',
             'title' => 'Background color',
-            'output' => 'body, body:not(.page-template-elementor_canvas)',
+            'output' => 'body',
             'output_mode' => 'background-color',
-        ),
-
-        array(
-            'id' => 'enb_share_tag',
-            'type' => 'switcher',
-            'title' => 'Post tag & share',
-        ),
-
-        array(
-            'id' => 'enb_single_nav',
-            'type' => 'switcher',
-            'title' => 'Single post navigation',
-        ),
-
-        array(
-            'id' => 'enb_pagination',
-            'type' => 'switcher',
-            'title' => 'Post pagination',
-        ),
-
-        array(
-            'id' => 'enb_rpost',
-            'type' => 'switcher',
-            'title' => 'Related post',
-        ),
-
-        array(
-            'id' => 'enb_authbox',
-            'type' => 'switcher',
-            'title' => 'Author box',
-        ),
-
-        array(
-            'id' => 'tag_title',
-            'type' => 'text',
-            'title' => 'Tag title',
-            'default' => 'Related tag',
-            'dependency' => array('enb_share_tag', '==', 'true'),
-        ),
-
-        array(
-            'id' => 'share_title',
-            'type' => 'text',
-            'title' => 'Share title',
-            'default' => 'Social share',
-            'dependency' => array('enb_share_tag', '==', 'true'),
-        ),
-
-        array(
-            'id' => 'related_title',
-            'type' => 'text',
-            'title' => 'Related post title',
-            'default' => 'Related post',
-            'dependency' => array('enb_rpost', '==', 'true'),
-        ),
-
-        array(
-            'id' => 'auth_title',
-            'type' => 'text',
-            'title' => 'Author box title',
-            'default' => 'Written by',
-            'dependency' => array('enb_authbox', '==', 'true'),
         ),
 
     )
@@ -96,44 +34,44 @@ CSF::createSection($prefix, array(
     'title' => 'Typography',
     'fields' => array(
         array(
-            'id' => 'arch_body_fonts',
+            'id' => 'mori_body_fonts',
             'type' => 'typography',
             'title' => 'Body Typography',
             'output' => 'body',
 
         ),
         array(
-            'id' => 'arch_h1_fonts',
+            'id' => 'mori_h1_fonts',
             'type' => 'typography',
             'title' => 'H1 Typography',
             'output' => 'h1',
         ),
         array(
-            'id' => 'arch_h2_fonts',
+            'id' => 'mori_h2_fonts',
             'type' => 'typography',
             'title' => 'H2 Typography',
             'output' => 'h2',
         ),
         array(
-            'id' => 'arch_h3_fonts',
+            'id' => 'mori_h3_fonts',
             'type' => 'typography',
             'title' => 'H3 Typography',
             'output' => 'h3',
         ),
         array(
-            'id' => 'arch_h4_fonts',
+            'id' => 'mori_h4_fonts',
             'type' => 'typography',
             'title' => 'H4 Typography',
             'output' => 'h4',
         ),
         array(
-            'id' => 'arch_h5_fonts',
+            'id' => 'mori_h5_fonts',
             'type' => 'typography',
             'title' => 'H5 Typography',
             'output' => 'h5',
         ),
         array(
-            'id' => 'arch_h6_fonts',
+            'id' => 'mori_h6_fonts',
             'type' => 'typography',
             'title' => 'H6 Typography',
             'output' => 'h6',

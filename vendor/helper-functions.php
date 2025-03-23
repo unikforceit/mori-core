@@ -12,23 +12,23 @@ function get_builder_image($url='',$class=''){
 }
 
 
-    function velanto_options($opt)
+    function mori_options($opt)
     {
-        $options = get_option('_velanto');
+        $options = get_option('_mori');
         if (isset($options[$opt])) {
             return $options[$opt];
         }
     }
 
-    function velanto_meta($opt)
+    function mori_meta($opt)
     {
-        $options = get_post_meta(get_the_ID(), '_velanto_meta', true);
+        $options = get_post_meta(get_the_ID(), '_mori_meta', true);
         if (isset($options[$opt])) {
             return $options[$opt];
         }
     }
 
-    function velanto_service_meta($opt)
+    function mori_service_meta($opt)
     {
         $options = get_post_meta(get_the_ID(), '_servicemeta', true);
         if (isset($options[$opt])) {
@@ -36,7 +36,7 @@ function get_builder_image($url='',$class=''){
         }
     }
 
-    function velanto_feature_meta($opt)
+    function mori_feature_meta($opt)
     {
         $options = get_post_meta(get_the_ID(), '_featuremeta', true);
         if (isset($options[$opt])) {
@@ -44,7 +44,7 @@ function get_builder_image($url='',$class=''){
         }
     }
 
-function velanto_drop_taxolist(){
+function mori_drop_taxolist(){
 
     $args = array(
       'public'   => true,
@@ -59,7 +59,7 @@ function velanto_drop_taxolist(){
 
 }
 
-function velanto_check_odd_even($data){
+function mori_check_odd_even($data){
     if($data % 2 == 0){
         $data = "Even";
     }
@@ -78,7 +78,7 @@ function client_ratings($count){
     return $out;
 }
 
-function velanto_get_that_link($link){
+function mori_get_that_link($link){
 
     $url = $link['url'] ? 'href='.esc_url($link['url']). '' : '';
     $ext = $link['is_external'] ? 'target= _blank' : '';
@@ -86,22 +86,15 @@ function velanto_get_that_link($link){
     $link = $url.' '.$ext.' '.$nofollow;
     return $link;
 }
-function velanto_list_control($settings, $icon, $tag="li"){
-    if(!empty($settings)){
-        $content_decode = json_decode($settings, true);
-        foreach ($content_decode as $value) {
-            echo "<$tag>". $icon . " " .$value['content_list']. "</$tag>";
-        }
-    }
-}
-function velanto_get_that_image($source, $class = 'image'){
+
+function mori_get_that_image($source, $class = 'image'){
     if ($source['url']){
         $image = '<img class="'.$class.'" src="'. esc_url( $source['url'] ).'" alt="'.get_bloginfo( 'name' ).'">';
     }
     return $image;
 }
 
-function king_buildermeta_to_string($items) {
+function mori_buildermeta_to_string($items) {
     if (!is_array($items) || empty($items)){
         return;
     }
@@ -111,7 +104,7 @@ function king_buildermeta_to_string($items) {
       return implode(',' , $metaf);
 }
 
-function king_menu_select_choices() {
+function mori_menu_select_choices() {
     $menus = wp_get_nav_menus();
     $items = array();
     $i     = 0;
@@ -127,7 +120,7 @@ function king_menu_select_choices() {
 }
 
 
-function velanto_image_size_choose() {
+function mori_image_size_choose() {
   $image_sizes = get_intermediate_image_sizes(); 
 
     $addsizes = array(
@@ -138,7 +131,7 @@ function velanto_image_size_choose() {
   return array_combine($newsizes, $newsizes);
 }
 
-function velantoelement_template_select() {
+function morielement_template_select() {
 
         global $post;
         $args = array('numberposts' => -1,'post_type' => 'elementor_library',);
@@ -151,7 +144,7 @@ function velantoelement_template_select() {
 
 }
 
-function velanto_page_title($arg){
+function mori_page_title($arg){
 
         if ( is_category() ) {
             /* translators: Category archive title. 1: Category name */
@@ -181,11 +174,11 @@ function velanto_page_title($arg){
         } elseif (is_search()){
             $title = sprintf( $arg['search'].'%s','<span>' . get_search_query() . '</span>' );
         }elseif( is_home() && is_front_page() ){
-          $title = esc_html__( 'Frontpage', 'velanto' );
+          $title = esc_html__( 'Frontpage', 'mori' );
         } elseif( is_singular() ){
           $title = get_the_title();
         }else {
-            $title = esc_html__( 'Archives','velanto' );
+            $title = esc_html__( 'Archives','mori' );
         }
 
         return $title;

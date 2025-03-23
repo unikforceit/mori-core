@@ -20,7 +20,6 @@ function mori_global_enqueue_assets() {
     wp_enqueue_script('mori-core-swiper', MORI_PLUGIN_URL . 'assets/js/swiper-bundle.min.js', array(), mori_dynamic_version(), true);
 }
 
-
 if (class_exists('acf')){
     $block_directories = glob(MORI_PLUGIN_DIR . 'includes/blocks/*', GLOB_ONLYDIR);
     if (!empty($block_directories) && is_array($block_directories)) {

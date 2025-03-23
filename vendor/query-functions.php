@@ -3,9 +3,9 @@
  * Display category based on theme options
  */
 
-if (!function_exists('velanto_single_category')) :
+if (!function_exists('mori_single_category')) :
 
-    function velanto_single_category($default = true)
+    function mori_single_category($default = true)
     {
 
         if ('post' == get_post_type()) {
@@ -31,7 +31,7 @@ if (!function_exists('velanto_single_category')) :
     }
 endif;
 
-function post_category_id($taxonomy)
+function mori_post_category_id($taxonomy)
 {
     global $post;
     $terms = get_the_terms($post->ID, $taxonomy);
@@ -40,7 +40,7 @@ function post_category_id($taxonomy)
     }
 }
 
-function velanto_drop_cat($tax)
+function mori_drop_cat($tax)
 {
     $args =  [
         'taxonomy'=> $tax
@@ -55,7 +55,7 @@ function velanto_drop_cat($tax)
     return $categories;
 }
 
-function velanto_single_category($default = true)
+function mori_single_category($default = true)
 {
     if ('post' == get_post_type()) {
         $categories = get_the_category();
@@ -71,7 +71,7 @@ function velanto_single_category($default = true)
     }
 }
 
-function velanto_get_category_link($taxonomy)
+function mori_get_category_link($taxonomy)
 {
 
     global $post;
@@ -88,7 +88,7 @@ function velanto_get_category_link($taxonomy)
     return trim($output, $separator);
 }
 
-function velanto_drop_posts($post_type)
+function mori_drop_posts($post_type)
 {
     $args = array(
         'numberposts' => -1,

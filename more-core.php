@@ -36,13 +36,19 @@ add_action( 'wp_enqueue_scripts', 'MORI_enqueue_assets' );
 //require_once MORI_PLUGIN_DIR . 'includes/class-api.php';
 
 function mori_framework_init_check() {
+    require_once MORI_PLUGIN_DIR .'vendor/helper-functions.php';
+    require_once MORI_PLUGIN_DIR .'vendor/query-functions.php';
+    require_once MORI_PLUGIN_DIR .'vendor/admin.php';
+    require_once MORI_PLUGIN_DIR .'vendor/cpt.php';
+    require_once MORI_PLUGIN_DIR .'vendor/customiser-extra.php';
     if( !class_exists( 'CSF' ) ) {
         require_once MORI_PLUGIN_DIR .'includes/codestar-framework/codestar-framework.php';
         require_once MORI_PLUGIN_DIR .'includes/options/customizer.php';
+        require_once MORI_PLUGIN_DIR .'includes/options/pagemeta.php';
     }
-    require_once MORI_PLUGIN_DIR .'includes/block-init.php';
     require_once MORI_PLUGIN_DIR .'includes/acf/acf.php';
-    require_once MORI_PLUGIN_DIR .'vendor/admin.php';
+    require_once MORI_PLUGIN_DIR .'includes/acf-fields.php';
+    require_once MORI_PLUGIN_DIR .'includes/block-init.php';
 }
 
 add_action( 'plugins_loaded', 'mori_framework_init_check' );
