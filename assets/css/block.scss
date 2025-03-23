@@ -1,2 +1,6 @@
+@function toRem($value) {
+  @return ($value / 16) + rem;
+}
+
 @import "_hero_slider";
 @import "_image_slider";
